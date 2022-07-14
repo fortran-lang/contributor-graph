@@ -113,20 +113,8 @@ export default function CustomizedDialogs({
     onChange(false);
   };
   return (
-    <div>
-      <Dialog
-        onClose={handleClose}
-        aria-labelledby="customized-dialog-title"
-        open={open}
-      >
-        <DialogTitle id="customized-dialog-title" onClose={handleClose}>
-          Share
-        </DialogTitle>
-        <DialogContent dividers>
-          <ShareModal params={params} />
-          <ShareLink params={params} />
-        </DialogContent>
-      </Dialog>
-    </div>
+   <>
+      
+    </>
   );
 }
