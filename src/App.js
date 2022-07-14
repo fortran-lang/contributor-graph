@@ -236,11 +236,8 @@ const App = () => {
                   updateChart(value);
                 }
               }}
-              renderInput={(params) => (<></>
-                    ),
-                  }}
-                />
-              )}
+              renderInput={(params) => (renderInput={(params) => (<> 
+                                                                 </>)}
             />
           </Paper>
           <div>
