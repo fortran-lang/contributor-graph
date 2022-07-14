@@ -179,7 +179,7 @@ const App = () => {
 
   React.useEffect(() => {
     getSearchOptions();
-    const repo = getParameterByName("repo") || "apache/apisix";
+    const repo = getParameterByName("repo") || "fortran-lang/fortran-lang.org";
     const repoArr = repo.split(",").filter(Boolean);
     setContributorRepoList(repoArr);
 
@@ -234,55 +234,7 @@ const App = () => {
             
           </div>}
         <div style={searchStyle}>
-          <Paper className={classes.root} elevation={0}>
-            <Autocomplete
-              freeSolo
-              className={classes.autocomplete}
-              size="small"
-              id="autocomplete"
-              disableClearable
-              options={searchOption}
-              onInputChange={(event, value, reason) => {
-                if (reason === "reset") {
-                  setRepo(value);
-                  updateChart(value);
-                }
-              }}
-              renderInput={(params) => (
-                <TextField
-                  {...params}
-                  label="Search Github Repository Name"
-                  margin="normal"
-                  variant="outlined"
-                  helperText="Keep searching to complete the comparison"
-                  className={classes.searchTextField}
-                  onChange={(e) => {
-                    setRepo(e.target.value);
-                  }}
-                  onKeyPress={(ev) => {
-                    if (ev.key === "Enter") {
-                      updateChart(repo);
-                      ev.preventDefault();
-                    }
-                  }}
-                  InputProps={{
-                    ...params.InputProps,
-                    endAdornment: (
-                      <InputAdornment>
-                        <IconButton
-                          onClick={() => {
-                            updateChart(repo);
-                          }}
-                        >
-                          <SearchIcon />
-                        </IconButton>
-                      </InputAdornment>
-                    ),
-                  }}
-                />
-              )}
-            />
-          </Paper>
+          
           <div>
             <CompareComponent
               list={contributorRepoList}
