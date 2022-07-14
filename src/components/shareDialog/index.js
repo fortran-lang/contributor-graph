@@ -62,14 +62,18 @@ function ShareModal({ params = "" }) {
     ? "monthly active contributor"
     : "GitHub contributor over time";
 
-  return (
+  return (<>
+      
+    </>
    
   );
 }
 
 const DialogTitle = withStyles(styles)((props) => {
   const { children, classes, onClose, ...other } = props;
-  return (
+  return (<>
+      
+    </>
    
   );
 });
@@ -93,7 +97,9 @@ export const MarkdownLink = ({ params = "", type = "contributorOverTime" }) => {
 
   const [isCopied, setCopied] = useClipboard(value, { successDuration: 3000 });
 
-  return (
+  return (<>
+      
+    </>
     
   );
 };
