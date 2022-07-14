@@ -298,16 +298,7 @@ const App = () => {
           </div>
         </div>
         <div className="right" style={containerStyle}>
-          <div style={{ display: "flex", justifyContent: "center" }}>
-            <div
-              className="search-container"
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                flexDirection: "column",
-              }}
-            ></div>
-          </div>
+          
 
           <div>
             <div
