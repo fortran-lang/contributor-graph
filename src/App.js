@@ -233,22 +233,7 @@ const App = () => {
           >
             
           </div>}
-        <div style={searchStyle}>
-          
-          <div>
-            <CompareComponent
-              list={contributorRepoList}
-              onDelete={(e) => {
-                const clonedContributorRepoList =
-                  cloneDeep(contributorRepoList);
-                const newContributorRepoList = clonedContributorRepoList.filter(
-                  (item) => item !== e
-                );
-                setContributorRepoList(newContributorRepoList);
-              }}
-            />
-          </div>
-        </div>
+     
         <div className="right" style={containerStyle}>
           
 
