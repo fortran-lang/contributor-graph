@@ -202,7 +202,18 @@ const App = () => {
   }, [value]);
 
   return (
-    <>
+     <>
+      <Snackbar
+        anchorOrigin={{ vertical: "top", horizontal: "right" }}
+        autoHideDuration={6000}
+        open={open}
+        onClose={handleClose}
+        key={"topcenter"}
+      >
+        <Alert severity={alertType} onClose={handleClose}>
+          {message}
+        </Alert>
+      </Snackbar>
       <div
         className="content"
         style={{
@@ -220,6 +231,7 @@ const App = () => {
               display: "block",
             }}
           >
+            <h1 style={{ fontSize: '1.8em', textAlign: 'center', margin: '0' }}>GitHub Contributor Over Time</h1>
           </div>}
         <div style={searchStyle}>
           <Paper className={classes.root} elevation={0}>
@@ -236,8 +248,39 @@ const App = () => {
                   updateChart(value);
                 }
               }}
-              renderInput={(params) => (renderInput={(params) => (<> 
-                                                                 </>)}
+              renderInput={(params) => (
+                <TextField
+                  {...params}
+                  label="Search Github Repository Name"
+                  margin="normal"
+                  variant="outlined"
+                  helperText="Keep searching to complete the comparison"
+                  className={classes.searchTextField}
+                  onChange={(e) => {
+                    setRepo(e.target.value);
+                  }}
+                  onKeyPress={(ev) => {
+                    if (ev.key === "Enter") {
+                      updateChart(repo);
+                      ev.preventDefault();
+                    }
+                  }}
+                  InputProps={{
+                    ...params.InputProps,
+                    endAdornment: (
+                      <InputAdornment>
+                        <IconButton
+                          onClick={() => {
+                            updateChart(repo);
+                          }}
+                        >
+                          <SearchIcon />
+                        </IconButton>
+                      </InputAdornment>
+                    ),
+                  }}
+                />
+              )}
             />
           </Paper>
           <div>
@@ -331,7 +374,7 @@ const App = () => {
           </div>
         </div>
         {!inIframe() && <Footer />}
-      </div> 
+      </div>
     </>
   );
 };
