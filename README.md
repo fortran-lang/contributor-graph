@@ -1,3 +1,7 @@
+
+# All the Credits of this application belong to [API7](https://github.com/api7/).
+# We are grateful to them for opensourcing this application. They are the original owners of this [code](https://github.com/api7/contributor-graph).
+
 # Contributor Graph
 
 This tool is used to generate contributor graphs across repositories. We use Github API to get all commits, try to find the "Github way" to filter commits so the result data would be similar to Github, and then get the first commit time of each contributor. All of the procedures are running on GCP, and it would automatically update the graph each day, so the link would always present the real-time data.
@@ -30,3 +34,5 @@ If you have any requests, including but not limited to:
 ## License
 
 [Apache 2.0 License](./LICENSE)
+
+
